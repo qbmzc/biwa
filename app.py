@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template,redirect
 import json
 import logging
 import folium
@@ -6,6 +6,27 @@ from folium import plugins
 import time, os, uuid
 
 app = Flask(__name__)
+
+
+@app.route("/show", methods=['post'])
+def show():
+    if not request.data:
+        return 'fail'
+    lnglatStr = request.data.decode('utf-8')
+    print(lnglatStr)
+    lngLatArr = json.loads(lnglatStr)
+    print(lngLatArr)
+    arr = []
+    for i in lngLatArr:
+        lnglat = i['lng'], i['lat']
+        arr.append(lnglat)
+    print(arr)
+    html_file = displaygeom(lines=arr, points=arr)
+    return redirect('line/'+html_file)
+
+@app.route('/line/<file>')
+def to_show_line():
+    return render_template()
 
 
 @app.route('/displaygeom')

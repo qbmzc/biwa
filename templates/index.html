@@ -28,23 +28,27 @@
     <h4>左击获取经纬度：</h4>
     <div class="input-item">
         <input type="text" readonly="true" id="lnglat">
+        <input type="button" onclick="showLine()" value="showLine">
     </div>
 </div>
 
 <script src="https://webapi.amap.com/maps?v=1.4.15&key=替换自己的key&plugin=AMap.Autocomplete"></script>
 <script type="text/javascript">
+    var lnglatArr=[];
     var map = new AMap.Map("container", {
         resizeEnable: true
     });
     //为地图注册click事件获取鼠标点击出的经纬度坐标
     map.on('click', function(e) {
-        var lng=e.lnglat.getLng()
-        var  lat= e.lnglat.getLat()
-        var lnglat={
-            "lng":lng,
-            "lat":lat
-        }
-        document.getElementById("lnglat").value = e.lnglat.getLng() + ',' + e.lnglat.getLat()
+        let lng = e.lnglat.getLng();
+        let lat = e.lnglat.getLat();
+        const lnglat = {
+            "lng": lng,
+            "lat": lat
+        };
+        lnglatArr.push(lnglat);
+        console.log(lnglatArr)
+        document.getElementById("lnglat").value =JSON.stringify(lnglatArr);
         $.ajax({
             contentType: 'application/json',
             type:'post',
@@ -57,6 +61,21 @@
 
         })
     });
+    function showLine() {
+        alert(JSON.stringify(lnglatArr))
+         $.ajax({
+            contentType: 'application/json',
+            type:'post',
+            url:'show',
+            data: JSON.stringify(lnglatArr),
+            success: function (res) {
+                console.log(res);
+                alert(res)
+            }
+
+        })
+
+    }
 </script>
 </body>
 </html>
