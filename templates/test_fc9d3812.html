@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_32b9013981d8455595a3fb28311cae38 {
+                #map_01af1834553f4d71a402ed207f29ebfc {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -36,15 +36,15 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_32b9013981d8455595a3fb28311cae38" ></div>
+            <div class="folium-map" id="map_01af1834553f4d71a402ed207f29ebfc" ></div>
         
 </body>
 <script>    
     
-            var map_32b9013981d8455595a3fb28311cae38 = L.map(
-                "map_32b9013981d8455595a3fb28311cae38",
+            var map_01af1834553f4d71a402ed207f29ebfc = L.map(
+                "map_01af1834553f4d71a402ed207f29ebfc",
                 {
-                    center: [31.0223135, 121.6285125],
+                    center: [31.95014625, 117.70991125],
                     crs: L.CRS.EPSG3857,
                     zoom: 14,
                     zoomControl: "False",
@@ -56,27 +56,39 @@
 
         
     
-            var tile_layer_63a0feeb4a5f45669c95deb40f6b0761 = L.tileLayer(
+            var tile_layer_f43178c3dfa74f1296e377391a3298db = L.tileLayer(
                 "http://webrd02.is.autonavi.com/appmaptile?lang=zh_cn\u0026size=1\u0026scale=1\u0026style=8\u0026x={x}\u0026y={y}\u0026z={z}\u0026ltype=6",
                 {"attribution": "AutoNavi", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_32b9013981d8455595a3fb28311cae38);
+            ).addTo(map_01af1834553f4d71a402ed207f29ebfc);
         
     
-            ant_path_69998b90079749679dd6122cdd0cd841 = L.polyline.antPath(
-              [[31.186486, 121.342181], [30.858141, 121.914844]],
+            ant_path_de167989b2d44b82a88c952535c3df8a = L.polyline.antPath(
+              [[31.235107, 121.445263], [34.726934, 113.612011], [30.57526, 114.326122], [31.263284, 121.456249]],
               {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [20, 25], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-        ).addTo(map_32b9013981d8455595a3fb28311cae38);
+        ).addTo(map_01af1834553f4d71a402ed207f29ebfc);
         
     
-            var marker_670af0f0926e40fbade590e3a8240f50 = L.marker(
-                [31.186486, 121.342181],
+            var marker_f8554cac7ab34f19937051ceac5008de = L.marker(
+                [31.235107, 121.445263],
                 {}
-            ).addTo(map_32b9013981d8455595a3fb28311cae38);
+            ).addTo(map_01af1834553f4d71a402ed207f29ebfc);
         
     
-            var marker_8f9c70eeb7b9457a82448ad6465fdee8 = L.marker(
-                [30.858141, 121.914844],
+            var marker_6384a36580b04c8b84eafce449141030 = L.marker(
+                [34.726934, 113.612011],
                 {}
-            ).addTo(map_32b9013981d8455595a3fb28311cae38);
+            ).addTo(map_01af1834553f4d71a402ed207f29ebfc);
+        
+    
+            var marker_341b64ded4ce4b6698a1d91c7a9487e9 = L.marker(
+                [30.57526, 114.326122],
+                {}
+            ).addTo(map_01af1834553f4d71a402ed207f29ebfc);
+        
+    
+            var marker_13038dd3f39b44219c2d72069e6fb816 = L.marker(
+                [31.263284, 121.456249],
+                {}
+            ).addTo(map_01af1834553f4d71a402ed207f29ebfc);
         
 </script>

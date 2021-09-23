@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template,redirect
+from flask import Flask, request, jsonify, render_template, redirect
 import json
 import logging
 import folium
@@ -22,11 +22,13 @@ def show():
         arr.append(lnglat)
     print(arr)
     html_file = displaygeom(lines=arr, points=arr)
-    return redirect('line/'+html_file)
+    logging.info(html_file)
+    return html_file
 
-@app.route('/line/<file>')
-def to_show_line():
-    return render_template()
+
+@app.route('/<file>')
+def to_show_line(file):
+    return render_template(file)
 
 
 @app.route('/displaygeom')
