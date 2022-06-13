@@ -74,9 +74,23 @@ def getLngLat():
     return 'success'
 
 
+@app.route("/getCords", methods=['post'])
+def getCords():
+    if not request.data:
+        return 'fail'
+    lnglat = request.data.decode('utf-8')
+    print(lnglat)
+    return 'success'
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/ha')
+def ha():
+    return render_template('ha.html')
 
 
 if __name__ == '__main__':
